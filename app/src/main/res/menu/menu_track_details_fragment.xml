@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/shareTrackItem"
+        android:title="Udostępnij"
+        android:icon="@drawable/icon_share_light"
+        app:showAsAction="ifRoom"
+        tools:showAsAction="always"/>
+
+    <item
+        android:id="@+id/deleteTrackItem"
+        android:title="Usuń"
+        android:icon="@drawable/icon_delete_dark"
+        app:showAsAction="never" />
+</menu>

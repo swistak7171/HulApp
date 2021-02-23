@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_profile"
+    app:startDestination="@id/profileFragment">
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="pl.kamilszustak.hulapp.ui.main.profile.main.ProfileFragment"
+        android:label="Profil"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment"
+            app:enterAnim="@anim/zoom_in_enter"
+            app:exitAnim="@anim/zoom_out_exit"
+            app:popEnterAnim="@anim/zoom_in_pop_enter"
+            app:popExitAnim="@anim/zoom_out_pop_exit" />
+        <action
+            android:id="@+id/action_profileFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment"
+            app:enterAnim="@anim/zoom_in_enter"
+            app:exitAnim="@anim/zoom_out_exit"
+            app:popEnterAnim="@anim/zoom_in_pop_enter"
+            app:popExitAnim="@anim/zoom_out_pop_exit" />
+        <action
+            android:id="@+id/action_profileFragment_to_profilePhotoOptionsBottomSheet"
+            app:destination="@id/profilePhotoOptionsBottomSheet" />
+        <action
+            android:id="@+id/action_profileFragment_to_profilePhotoFullscreenDialog"
+            app:destination="@id/profilePhotoFullscreenDialog"
+            app:enterAnim="@anim/zoom_in_enter"
+            app:exitAnim="@anim/zoom_out_exit"
+            app:popEnterAnim="@anim/zoom_in_pop_enter"
+            app:popExitAnim="@anim/zoom_out_pop_exit" />
+        <action
+            android:id="@+id/action_profileFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:enterAnim="@anim/zoom_in_enter"
+            app:exitAnim="@anim/zoom_out_exit"
+            app:popEnterAnim="@anim/zoom_in_pop_enter"
+            app:popExitAnim="@anim/zoom_out_pop_exit" />
+        <action
+            android:id="@+id/action_profileFragment_to_trackDetailsFragment"
+            app:destination="@id/trackDetailsFragment"
+            app:enterAnim="@anim/zoom_in_enter"
+            app:exitAnim="@anim/zoom_out_exit"
+            app:popEnterAnim="@anim/zoom_in_pop_enter"
+            app:popExitAnim="@anim/zoom_out_pop_exit" />
+        <action
+            android:id="@+id/action_profileFragment_to_trackingHistoryFragment"
+            app:destination="@id/trackingHistoryFragment"
+            app:enterAnim="@anim/zoom_in_enter"
+            app:exitAnim="@anim/zoom_out_exit"
+            app:popEnterAnim="@anim/zoom_in_pop_enter"
+            app:popExitAnim="@anim/zoom_out_pop_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="pl.kamilszustak.hulapp.ui.main.profile.edit.EditProfileFragment"
+        android:label="Edycja profilu"
+        tools:layout="@layout/fragment_edit_profile" />
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="pl.kamilszustak.hulapp.ui.main.profile.changepassword.ChangePasswordFragment"
+        android:label="Zmiana hasła"
+        tools:layout="@layout/fragment_change_password" />
+    <dialog
+        android:id="@+id/profilePhotoOptionsBottomSheet"
+        android:name="pl.kamilszustak.hulapp.ui.main.profile.main.photo.options.ProfilePhotoOptionsBottomSheet"
+        android:label="ProfilePhotoOptionsBottomSheet"
+        tools:layout="@layout/bottom_sheet_profile_photo_options" />
+    <dialog
+        android:id="@+id/profilePhotoFullscreenDialog"
+        android:name="pl.kamilszustak.hulapp.ui.main.profile.main.photo.fullscreen.ProfilePhotoFullscreenDialogFragment"
+        android:label="ProfilePhotoFullscreenDialog"
+        tools:layout="@layout/dialog_profile_photo_fullscreen">
+        <argument
+            android:name="profilePhotoUrl"
+            app:argType="string" />
+    </dialog>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="pl.kamilszustak.hulapp.ui.main.profile.search.SearchFragment"
+        android:label="Szukaj"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment"
+            app:enterAnim="@anim/zoom_in_enter"
+            app:exitAnim="@anim/zoom_out_exit"
+            app:popEnterAnim="@anim/zoom_in_pop_enter"
+            app:popExitAnim="@anim/zoom_out_pop_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="pl.kamilszustak.hulapp.ui.main.profile.user.UserProfileFragment"
+        android:label="Profil użytkownika"
+        tools:layout="@layout/fragment_user_profile">
+        <argument
+            android:name="userId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_userTrackingHistoryFragment"
+            app:destination="@id/userTrackingHistoryFragment"
+            app:enterAnim="@anim/zoom_in_enter"
+            app:exitAnim="@anim/zoom_out_exit"
+            app:popEnterAnim="@anim/zoom_in_pop_enter"
+            app:popExitAnim="@anim/zoom_out_pop_exit" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_userTrackDetailsFragment"
+            app:destination="@id/userTrackDetailsFragment"
+            app:enterAnim="@anim/zoom_in_enter"
+            app:exitAnim="@anim/zoom_out_exit"
+            app:popEnterAnim="@anim/zoom_in_pop_enter"
+            app:popExitAnim="@anim/zoom_out_pop_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/trackDetailsFragment"
+        android:name="pl.kamilszustak.hulapp.ui.main.tracking.details.TrackDetailsFragment"
+        android:label="Szczegóły trasy"
+        tools:layout="@layout/fragment_track_details">
+        <argument
+            android:name="trackId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/trackingHistoryFragment"
+        android:name="pl.kamilszustak.hulapp.ui.main.tracking.history.main.TrackingHistoryFragment"
+        android:label="Historia tras"
+        tools:layout="@layout/fragment_tracking_history" >
+        <action
+            android:id="@+id/action_trackingHistoryFragment_to_trackDetailsFragment"
+            app:destination="@id/trackDetailsFragment"
+            app:enterAnim="@anim/zoom_in_enter"
+            app:exitAnim="@anim/zoom_out_exit"
+            app:popEnterAnim="@anim/zoom_in_pop_enter"
+            app:popExitAnim="@anim/zoom_out_pop_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/userTrackDetailsFragment"
+        android:name="pl.kamilszustak.hulapp.ui.main.tracking.details.user.UserTrackDetailsFragment"
+        android:label="Szczegóły trasy użytkownika"
+        tools:layout="@layout/fragment_user_track_details">
+        <argument
+            android:name="trackId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/userTrackingHistoryFragment"
+        android:name="pl.kamilszustak.hulapp.ui.main.tracking.history.user.UserTrackingHistoryFragment"
+        android:label="Historia tras użytkownika"
+        tools:layout="@layout/fragment_user_tracking_history">
+        <action
+            android:id="@+id/action_userTrackingHistoryFragment_to_userTrackDetailsFragment"
+            app:destination="@id/userTrackDetailsFragment"
+            app:enterAnim="@anim/zoom_in_enter"
+            app:exitAnim="@anim/zoom_out_exit"
+            app:popEnterAnim="@anim/zoom_in_pop_enter"
+            app:popExitAnim="@anim/zoom_out_pop_exit" />
+        <argument
+            android:name="userId"
+            app:argType="long" />
+    </fragment>
+</navigation>
